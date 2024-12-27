@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ineza Cooperative Rwanda</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="ineza.png" alt="LOGO">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1 data-aos="fade-up">INEZA Cooperative Rwanda</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Goodness and kindness, imbued with the mercy of God</p>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-content" data-aos="fade-right">
+                <h2>Our Story</h2>
+                <p>The story of INEZA Cooperative is one of strength, courage, and community. All the women of INEZA Cooperative are living with HIV/AIDS as a result of genocidal rape and sexual violence. However, rather than focusing on the horrors of the genocide and its aftermath, the women of INEZA Cooperative are a testament to the power of Rwandan women to work toward a better future for themselves, their families, and their nation.</p>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="/api/placeholder/600/400" alt="About Ineza">
+            </div>
+        </section>
+
+        <!--<section id="programs">
+            <h2>Our Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card" data-aos="fade-up">
+                    <div class="program-image">
+                        <img src="/api/placeholder/400/300" alt="Sewing Program">
+                    </div>
+                    <div class="program-content">
+                        <h3>Sewing Program</h3>
+                        <p>Our flagship program providing skills and income generation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <!--<section id="store">
+            <h2>Store</h2>
+            <div class="store-container">
+            </div>
+        </section>-->
+
+        <!--<section id="donate" class="form-container">
+            <h2>Support Our Cause</h2>
+            <form id="donateForm">
+                <div class="form-group">
+                    <label for="amount">Donation Amount</label>
+                    <input type="number" id="amount" required>
+                </div>
+                <button type="submit">Donate Now</button>
+            </form>
+        </section>-->
+
+        <!--<section id="contact" class="form-container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>-->
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>INEZA Cooperative Rwanda</h3>
+                <p>Making a difference through empowerment and community.</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: info@ineza.rw</p>
+                <p>Phone: +250 XXX XXX XXX</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Store functionality
+        class Store {
+            constructor() {
+                this.products = [];
+                this.cart = [];
+            }
+
+            addProduct(product) {
+                this.products.push(product);
+                this.renderProducts();
+            }
+
+            renderProducts() {
+                const container = document.querySelector('.store-container');
+                container.innerHTML = this.products.map(product => `
+                    <div class="product-card" data-aos="fade-up">
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-content">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                            <button onclick="store.addToCart(${product.id})">Add to Cart</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            addToCart(productId) {
+                const product = this.products.find(p => p.id === productId);
+                if (product) {
+                    this.cart.push(product);
+                    this.updateCart();
+                }
+            }
+
+            updateCart() {
+                // Update cart UI
+                console.log('Cart updated:', this.cart);
+            }
+        }
+
+        const store = new Store();
+
+        // Example product
+        store.addProduct({
+            id: 1,
+            name: 'Traditional Fabric Bag',
+            description: 'Handmade bag using traditional African fabrics',
+            price: 29.99,
+            image: '/api/placeholder/300/300'
+        });
+
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Handle form submission
+            console.log('Contact form submitted');
+        });
+
+        document.getElementById('donateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Handle donation
+            console.log('Donation submitted');
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
