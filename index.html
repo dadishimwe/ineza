@@ -7,6 +7,124 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Additional Styles for New Sections */
+        .mission {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            padding: 4rem 5%;
+            background: #f9f9f9;
+        }
+
+        .mission-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .mission-text {
+            text-align: left;
+        }
+
+        .mission-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #026b20;
+        }
+
+        .mission-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .mission-text blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #026b20;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .mission-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .what-we-do {
+            padding: 4rem 5%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .what-we-do h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #026b20;
+        }
+
+        .what-we-do p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .donation-info {
+            padding: 4rem 5%;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .donation-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #026b20;
+        }
+
+        .donation-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .donation-info a {
+            background: #11c037;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .donation-info a:hover {
+            background: #03f293;
+        }
+
+        @media (max-width: 768px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .mission-text {
+                text-align: center;
+            }
+
+            .mission-image {
+                order: -1;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -33,6 +151,22 @@
             <p data-aos="fade-up" data-aos-delay="200">Goodness and kindness, imbued with the mercy of God</p>
         </section>
 
+        <section class="mission">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p>At INEZA Cooperative, our mission is to spread love, hope, and empowerment to women and communities affected by HIV/AIDS. We believe in the power of unity and resilience to create a brighter future.</p>
+                    <blockquote>
+                        "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future." 
+                        <br>— Jeremiah 29:11
+                    </blockquote>
+                </div>
+                <div class="mission-image">
+                    <img src="mission-image.jpg" alt="Our Mission">
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="about">
             <div class="about-content" data-aos="fade-right">
                 <h2>Our Story</h2>
@@ -43,56 +177,16 @@
             </div>
         </section>
 
-        <!--<section id="programs">
-            <h2>Our Programs</h2>
-            <div class="programs-grid">
-                <div class="program-card" data-aos="fade-up">
-                    <div class="program-image">
-                        <img src="/api/placeholder/400/300" alt="Sewing Program">
-                    </div>
-                    <div class="program-content">
-                        <h3>Sewing Program</h3>
-                        <p>Our flagship program providing skills and income generation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>-->
+        <section class="what-we-do">
+            <h2>What We Do</h2>
+            <p>At INEZA Cooperative, we create beautiful handmade crafts and traditional African clothing. Our products are a reflection of our culture, resilience, and creativity. By supporting us, you are helping to empower women and sustain their livelihoods.</p>
+        </section>
 
-        <!--<section id="store">
-            <h2>Store</h2>
-            <div class="store-container">
-            </div>
-        </section>-->
-
-        <!--<section id="donate" class="form-container">
+        <section class="donation-info">
             <h2>Support Our Cause</h2>
-            <form id="donateForm">
-                <div class="form-group">
-                    <label for="amount">Donation Amount</label>
-                    <input type="number" id="amount" required>
-                </div>
-                <button type="submit">Donate Now</button>
-            </form>
-        </section>-->
-
-        <!--<section id="contact" class="form-container">
-            <h2>Contact Us</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>-->
+            <p>Your donation can make a difference in the lives of the women at INEZA Cooperative. Help us continue our mission of empowerment and hope.</p>
+            <a href="donate.html">Donate Now</a>
+        </section>
     </main>
 
     <footer>
@@ -115,82 +209,6 @@
         AOS.init({
             duration: 1000,
             once: true
-        });
-
-        // Store functionality
-        class Store {
-            constructor() {
-                this.products = [];
-                this.cart = [];
-            }
-
-            addProduct(product) {
-                this.products.push(product);
-                this.renderProducts();
-            }
-
-            renderProducts() {
-                const container = document.querySelector('.store-container');
-                container.innerHTML = this.products.map(product => `
-                    <div class="product-card" data-aos="fade-up">
-                        <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <div class="product-content">
-                            <h3>${product.name}</h3>
-                            <p>${product.description}</p>
-                            <p>Price: $${product.price}</p>
-                            <button onclick="store.addToCart(${product.id})">Add to Cart</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            addToCart(productId) {
-                const product = this.products.find(p => p.id === productId);
-                if (product) {
-                    this.cart.push(product);
-                    this.updateCart();
-                }
-            }
-
-            updateCart() {
-                // Update cart UI
-                console.log('Cart updated:', this.cart);
-            }
-        }
-
-        const store = new Store();
-
-        // Example product
-        store.addProduct({
-            id: 1,
-            name: 'Traditional Fabric Bag',
-            description: 'Handmade bag using traditional African fabrics',
-            price: 29.99,
-            image: '/api/placeholder/300/300'
-        });
-
-        // Form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Handle form submission
-            console.log('Contact form submitted');
-        });
-
-        document.getElementById('donateForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Handle donation
-            console.log('Donation submitted');
-        });
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const section = document.querySelector(this.getAttribute('href'));
-                section.scrollIntoView({ behavior: 'smooth' });
-            });
         });
     </script>
 </body>
