@@ -3,10 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ineza Cooperative Rwanda</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Ineza Cooperative Rwanda - Store</title>
+    <style>
+        :root {
+            --primary: #E94F37;     /* Warm Red */
+            --secondary: #1B998B;   /* Teal */
+            --accent: #FFAD05;      /* Gold */
+            --neutral: rgb(27, 188, 156);     /* Dark Blue */
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--neutral) 0%, var(--white) 100%);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(27, 188, 156, 255);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 150px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--neutral);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .store-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 200px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .product-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--neutral);
+        }
+
+        .product-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-content button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .product-content button:hover {
+            background: var(--secondary);
+        }
+
+        footer {
+            background: var(--neutral);
+            color: var(--white);
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            nav a {
+                color: var(--neutral);
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,21 +192,228 @@
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <h1 data-aos="fade-up">INEZA Cooperative Rwanda</h1>
-            <p data-aos="fade-up" data-aos-delay="200">Goodness and kindness, imbued with the mercy of God</p>
-        </section>
+        <section class="store-container">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 1">
+                </div>
+                <div class="product-content">
+                    <h3>Delicious Apples</h3>
+                    <p>Apples are nutritious and may be good for weight loss and bone health.</p>
+                    <p>Price: $7.93</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-        <section id="about" class="about">
-            <div class="about-content" data-aos="fade-right">
-                <h2>Our Story</h2>
-                <p>The story of INEZA Cooperative is one of strength, courage, and community. All the women of INEZA Cooperative are living with HIV/AIDS as a result of genocidal rape and sexual violence. However, rather than focusing on the horrors of the genocide and its aftermath, the women of INEZA Cooperative are a testament to the power of Rwandan women to work toward a better future for themselves, their families, and their nation.</p>
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 2">
+                </div>
+                <div class="product-content">
+                    <h3>Organic Bananas</h3>
+                    <p>Rich in potassium and great for a healthy diet.</p>
+                    <p>Price: $5.99</p>
+                    <button>Add to Cart</button>
+                </div>
             </div>
-            <div class="about-image" data-aos="fade-left">
-                <img src="/api/placeholder/600/400" alt="About Ineza">
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Add more product cards as needed -->
+              <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+         <!-- Product Card 3 -->
+         <div class="product-card">
+            <div class="product-image">
+                <img src="/api/placeholder/300/300" alt="Product 3">
+            </div>
+            <div class="product-content">
+                <h3>Fresh Oranges</h3>
+                <p>High in vitamin C and perfect for a refreshing juice.</p>
+                <p>Price: $4.50</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+         <!-- Product Card 3 -->
+         <div class="product-card">
+            <div class="product-image">
+                <img src="/api/placeholder/300/300" alt="Product 3">
+            </div>
+            <div class="product-content">
+                <h3>Fresh Oranges</h3>
+                <p>High in vitamin C and perfect for a refreshing juice.</p>
+                <p>Price: $4.50</p>
+                <button>Add to Cart</button>
+            </div>
+        </div> 
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="product-card">
+                <div class="product-image">
+                    <img src="/api/placeholder/300/300" alt="Product 3">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Oranges</h3>
+                    <p>High in vitamin C and perfect for a refreshing juice.</p>
+                    <p>Price: $4.50</p>
+                    <button>Add to Cart</button>
+                </div>
             </div>
         </section>
-       
     </main>
 
     <footer>
@@ -58,90 +429,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
-        // Store functionality
-        class Store {
-            constructor() {
-                this.products = [];
-                this.cart = [];
-            }
-
-            addProduct(product) {
-                this.products.push(product);
-                this.renderProducts();
-            }
-
-            renderProducts() {
-                const container = document.querySelector('.store-container');
-                container.innerHTML = this.products.map(product => `
-                    <div class="product-card" data-aos="fade-up">
-                        <div class="product-image">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <div class="product-content">
-                            <h3>${product.name}</h3>
-                            <p>${product.description}</p>
-                            <p>Price: $${product.price}</p>
-                            <button onclick="store.addToCart(${product.id})">Add to Cart</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            addToCart(productId) {
-                const product = this.products.find(p => p.id === productId);
-                if (product) {
-                    this.cart.push(product);
-                    this.updateCart();
-                }
-            }
-
-            updateCart() {
-                // Update cart UI
-                console.log('Cart updated:', this.cart);
-            }
-        }
-
-        const store = new Store();
-
-        // Example product
-        store.addProduct({
-            id: 1,
-            name: 'Traditional Fabric Bag',
-            description: 'Handmade bag using traditional African fabrics',
-            price: 29.99,
-            image: '/api/placeholder/300/300'
-        });
-
-        // Form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Handle form submission
-            console.log('Contact form submitted');
-        });
-
-        document.getElementById('donateForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Handle donation
-            console.log('Donation submitted');
-        });
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const section = document.querySelector(this.getAttribute('href'));
-                section.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
 </body>
 </html>
